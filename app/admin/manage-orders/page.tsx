@@ -1,8 +1,5 @@
-
 const ManageOrders = () => {
-  return (
-    <div>ManageOrders</div>
-  )
-}
+  return <div>page</div>;
+};
 
-export default ManageOrders
+export default ManageOrders;
