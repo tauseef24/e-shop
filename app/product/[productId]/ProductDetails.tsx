@@ -5,6 +5,7 @@ import ProductImage from "@/app/components/products/ProductImage";
 import SetColor from "@/app/components/products/SetColor";
 import SetQuantity from "@/app/components/products/SetQuantity";
 import { useCart } from "@/hooks/useCart";
+import { formatPrice } from "@/utils/formatPrice";
 import { Rating } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useCallback, useState, useEffect } from "react";
@@ -107,6 +108,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
       />
       <div className="flex flex-col gap-1 text-slate-500 text-sm">
         <h2 className="text-3xl font-medium text-slate-700">{product.name}</h2>
+        <h2 className="text-3xl font-bold text-slate-700">
+          {formatPrice(product.price)}
+        </h2>
         <div className="flex items-center gap-2">
           <Rating value={productRating} readOnly />
           <div>{product.reviews.length} reviews</div>

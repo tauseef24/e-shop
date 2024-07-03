@@ -9,6 +9,7 @@ interface ListRatingProps {
 }
 
 const ListRating: React.FC<ListRatingProps> = ({ product }) => {
+  if (product.reviews.length === 0) return null;
   return (
     <div>
       <Heading title="Product Review" />
@@ -28,7 +29,7 @@ const ListRating: React.FC<ListRatingProps> = ({ product }) => {
                   <Rating value={review.rating} readOnly />
                   <div className="ml-2">{review.comment}</div>
                 </div>
-                <hr className="my-4"/>
+                <hr className="my-4" />
               </div>
             );
           })}
